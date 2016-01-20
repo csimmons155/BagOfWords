@@ -14,8 +14,8 @@ out1 = np.zeros((len(im1),len(im2[0])))
 out2 = np.zeros((len(im2),len(im2[0])))
 
 f = open('3d_pointCloud.txt', 'w')
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
+#fig = plt.figure()
+#ax = fig.add_subplot(111, projection='3d')
 
 
 baseline = 100 #mm
@@ -39,7 +39,7 @@ for x in range(7, len(im1) - 7):
             x1 = (baseline * (2*right_row)) / (2 * disparity)
             y1 = (baseline * (y + y_max)) / (2* disparity)
             f.write("("+str(x1)+","+str(y1)+","+str(z)+")\n")
-            Axes3D.plot(ax,x1,y1,zs=z)
+            #Axes3D.plot(ax,x1,y1,zs=z)
 
 
 cv2.imwrite("depth.bmp", out1)
